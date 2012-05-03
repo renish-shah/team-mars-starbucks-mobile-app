@@ -1,5 +1,6 @@
 package com.sb.view;
 
+import com.sb.common.Menu;
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
 
