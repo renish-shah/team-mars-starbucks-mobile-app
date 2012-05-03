@@ -1,5 +1,6 @@
 package com.sb.view;
 
+import com.sb.common.CreditBalance;
 import com.sb.common.Menu;
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
@@ -67,9 +68,11 @@ public class MyCardsMoreOptions implements ScreenState {
 		applet.textFont(f, 14); // the font size
 		applet.text("Cancel", 11, 29);
 
+		
+		//Modified by RENISH
 		applet.fill(255); // the font color-white
 		applet.textFont(f, 20); // the font size
-		applet.text("$16.50", 168, 100);
+		applet.text("$"+CreditBalance.getInstance().getBalance(), 168, 100);
 		applet.textFont(f, 10);
 		applet.text("as of TODAY at 8.30pm", 150, 120);
 
