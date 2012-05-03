@@ -4,7 +4,7 @@ public class CreditBalance {
 	private static CreditBalance crdbal;
 	private static float balance = 20.0f;
 	
-	private CreditBalance(){		
+	public CreditBalance(){		
 	}
 	
 	public static CreditBalance getInstance() {
