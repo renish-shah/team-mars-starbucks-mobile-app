@@ -36,7 +36,7 @@ public class MyCardsMain implements ScreenState {
 
 	@Override
 	public void setup(PApplet applet) {
-		
+
 		// Setting the size of the screen
 		applet.size(262, 400);
 
@@ -78,26 +78,27 @@ public class MyCardsMain implements ScreenState {
 
 		Calendar cal = new GregorianCalendar();
 		String am_pm;
-		
+
 		int hour = cal.get(Calendar.HOUR);
-		if(cal.get(Calendar.AM_PM) == 0){
+		if (cal.get(Calendar.AM_PM) == 0) {
 			am_pm = "AM";
-		}
-		else {
+		} else {
 			am_pm = "PM";
 		}
-		
+
 		bal = CreditBalance.getInstance();
-		
+
 		applet.fill(255);
 		f6 = applet.loadFont("Calibri-8.vlw");
 		applet.textFont(f6, 36);
-		//applet.text("$16.50", 70, 250);
-		applet.text(""+bal.getBalance(), 70, 250);
+		// applet.text("$16.50", 70, 250);
+		String balance = "" + bal.getBalance();
+
+		applet.text("" + balance.substring(0, 4), 70, 250);
 
 		f7 = applet.loadFont("Calibri-8.vlw");
 		applet.textFont(f7, 16);
-		//applet.text("as of TODAY at 9:00pm", 45, 270);
+		// applet.text("as of TODAY at 9:00pm", 45, 270);
 		applet.text("as of TODAY at " + hour + am_pm, 60, 270);
 
 		/*******************************************************************************/
@@ -107,10 +108,10 @@ public class MyCardsMain implements ScreenState {
 		applet.line(0, 350, 300, 350);
 		applet.fill(50);
 		applet.rect(0, 350, 262, 50);
-		
+
 		mn = new Menu(appController);
 		mn.draw(applet);
-		
+
 		// 5. Settings
 		applet.fill(80);
 		applet.rect(212, 352, 50, 45);
@@ -127,23 +128,21 @@ public class MyCardsMain implements ScreenState {
 
 	@Override
 	public void mousePressed(PApplet applet) {
-		if(applet.mouseX > 3 && applet.mouseX < 210
-				&& applet.mouseY > 352 && applet.mouseY < 397){
+		if (applet.mouseX > 3 && applet.mouseX < 210 && applet.mouseY > 352
+				&& applet.mouseY < 397) {
 			mn = new Menu(appController);
 			mn.mousePressed(applet);
-		}
-		else if(applet.mouseX > 40 && applet.mouseX < 210
-				&& applet.mouseY > 220 && applet.mouseY < 280){
+		} else if (applet.mouseX > 40 && applet.mouseX < 210
+				&& applet.mouseY > 220 && applet.mouseY < 280) {
 			appController.setCurrentScreen(appController.getMyCardOptions());
-		}
-		else if(applet.mouseX > (220 - 50) && applet.mouseX < (220 + 50)
-				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
+		} else if (applet.mouseX > (220 - 50) && applet.mouseX < (220 + 50)
+				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)) {
 			appController.setCurrentScreen(appController.getMyCardsPay());
 		}
 	}
 
 	@Override
-	public void draw(PApplet applet) {		
+	public void draw(PApplet applet) {
 		tch = new FlipScreen(appController);
 		tch.draw(applet);
 	}
