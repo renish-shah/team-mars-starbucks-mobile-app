@@ -14,7 +14,7 @@ public class BarCode implements ScreenState {
 
 	AppController appController;
 	PFont f, f3;
-	PImage b, MainCard, MyHome, Payments, MyRewards, Stores, Settings;
+	PImage b;
 	private CreditBalance balance;
 	int count = 0;
 	
