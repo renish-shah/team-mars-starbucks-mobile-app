@@ -13,21 +13,21 @@ public class PayScreenTest {
 	@Test
 	public void testSetBalance() {
 		float expectedf = 16.4f;
-		float actualf; 
+		double actualf; 
 		CreditBalance bal = CreditBalance.getInstance();
 		actualf = bal.setBalance();
 		assertEquals("Valid!",expectedf, actualf);
-		fail("Not yet implemented");
+		
 	}
 	
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testGetBalance() {
-		float expectedf = 16.4f;
-		float actualf; 
+		float expectedf = 20.00f;
+		double actualf; 
 		CreditBalance bal = CreditBalance.getInstance();
 		actualf = bal.getBalance();
 		assertEquals("Valid!",expectedf, actualf);
-		fail("Not yet implemented");
+		
 	}
 }

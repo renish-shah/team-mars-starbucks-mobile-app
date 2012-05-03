@@ -129,7 +129,9 @@ public class PinScreen implements ScreenState {
 		}
 
 		else if((keypad.getPassword()).equals(validPin)){
-			appController.setCurrentScreen(appController.getMyCardsMoreOptions());
+			
+			//Chnaged by RENISH to change the flow
+			appController.setCurrentScreen(appController.getMyCardsMain());
 		}
 	}
 }

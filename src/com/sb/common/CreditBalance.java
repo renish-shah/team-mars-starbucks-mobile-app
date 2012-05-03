@@ -2,7 +2,7 @@ package com.sb.common;
 
 public class CreditBalance {
 	private static CreditBalance crdbal;
-	private static float balance = 20.0f;
+	private static double balance = 20.0;
 	
 	private CreditBalance(){		
 	}
@@ -14,17 +14,17 @@ public class CreditBalance {
 		return crdbal;
 	}
 	
-	public static float getBalance() {
+	public static double getBalance() {
 		return balance;
 	}
 	
-	public static float setBalance() {
+	public static double setBalance() {
 		return balance -= 3.60;
 	}
 	
 	//Added by RENISH to add new card balance
-	public static float addNewCardbalance()
+	public static double addNewCardbalance()
 	{
-		return balance = 20.0f;
+		return balance = 20.0;
 	}
 }
