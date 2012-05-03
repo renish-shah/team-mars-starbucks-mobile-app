@@ -1,7 +1,9 @@
 package com.sb.view;
 
 /*
- * Author:Manju Rajput Topic: PassCode
+ * Author:Manju Rajput 
+ * CMPE# : CMPE202
+ * Topic: PassCode
  *
  */
 
@@ -15,6 +17,7 @@ public class PassCode implements ScreenState {
 	PFont f2;
 	KeyPad keypad;
 	int passcodeLength;
+	final String validPin = "1234"; 
 
 	public PassCode(){
 		keypad = new KeyPad();
@@ -77,7 +80,7 @@ public void drawArrow(int cx, int cy, int len, float angle, PApplet applet) {
 }
 
 public String checkPin(PApplet applet){
-	if(keypad.getPassword().length() == 4 && !(keypad.getPassword()).equals("1234")){
+	if(keypad.getPassword().length() == 4 && !(keypad.getPassword()).equals(validPin)){
 		System.out.println("Incorrect password");
 		keypad.setState(keypad.getNoPinState());
 		keypad.setPassword("");
