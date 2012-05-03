@@ -4,7 +4,7 @@ public class CreditBalance {
 	private static CreditBalance crdbal;
 	private static float balance = 20.0f;
 	
-	public CreditBalance(){		
+	private CreditBalance(){		
 	}
 	
 	public static CreditBalance getInstance() {
@@ -20,5 +20,11 @@ public class CreditBalance {
 	
 	public static float setBalance() {
 		return balance -= 3.60;
+	}
+	
+	//Added by RENISH to add new card balance
+	public static float addNewCardbalance()
+	{
+		return balance = 20.0f;
 	}
 }
