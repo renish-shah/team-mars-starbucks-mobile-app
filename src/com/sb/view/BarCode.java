@@ -2,6 +2,7 @@ package com.sb.view;
 
 import java.util.Random;
 
+import com.sb.common.CreditBalance;
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
 

@@ -1,7 +1,13 @@
-package com.sb.view;
+package com.sb.common;
 
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
+import com.sb.view.CardMainMenuItem;
+import com.sb.view.FindStarbucksMenuItem;
+import com.sb.view.MenuItem;
+import com.sb.view.MyRewardMenuItem;
+import com.sb.view.PaymentMenuItem;
+
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;

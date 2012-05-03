@@ -1,4 +1,4 @@
-package com.sb.view;
+package com.sb.common;
 
 public class CreditBalance {
 	private static CreditBalance crdbal;

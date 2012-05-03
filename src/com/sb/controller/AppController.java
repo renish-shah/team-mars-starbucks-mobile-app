@@ -1,5 +1,6 @@
 package com.sb.controller;
 
+import com.sb.common.CreditBalance;
 import com.sb.view.AddCard;
 import com.sb.view.FindStarbucks;
 import com.sb.view.MyCardOptions;
@@ -9,7 +10,6 @@ import com.sb.view.MyCardsPay;
 import com.sb.view.MyRewards;
 import com.sb.view.Payment;
 import com.sb.view.PinScreen;
-import com.sb.view.CreditBalance;
 
 import processing.core.PApplet;
 
