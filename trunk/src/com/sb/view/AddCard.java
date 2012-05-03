@@ -1,5 +1,6 @@
 package com.sb.view;
  
+import com.sb.common.CreditBalance;
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
  
@@ -123,6 +124,10 @@ public class AddCard implements ScreenState {
         else if (applet.mouseX > 180 - 75 && applet.mouseX < 180 + 75
                 && applet.mouseY > 5 - 35 && applet.mouseY < 5 + 35) {
             // When Button Add New is pressed
+        	
+        	//Added by RENISH to add New Balance
+        	CreditBalance creditBalance=CreditBalance.getInstance();
+            creditBalance.addNewCardbalance();
             applet.fill(250, 255, 155, 220);
             applet.rect(180, 5, 75, 35, 8, 8, 8, 8);
             appController.setCurrentScreen(appController.getMyCardsMain());
@@ -131,6 +136,7 @@ public class AddCard implements ScreenState {
         {
              if ( pressedNumber != null) {
                     addCard.setCardNumberDigit(pressedNumber);
+                   
              } else if ( removeDigit) {
                  addCard.removeCardNumberDigit();
              }
@@ -139,6 +145,7 @@ public class AddCard implements ScreenState {
              if ( pressedNumber != null) {
                    //String displaypressedNumber="*";
                     addCard.setCardCodeDigit(pressedNumber);
+                    
              } else if ( removeDigit) {
                  addCard.removeCardCodeDigit();
              }
