@@ -1,5 +1,6 @@
 package com.sb.view;
 
+import com.sb.common.CreditBalance;
 import com.sb.common.Menu;
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
@@ -106,6 +107,12 @@ public class MyCardsPay implements ScreenState {
 				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
 			/*tch = new TouchWhenDone(appController);
 			tch.draw(applet);*/
+			
+			//Added by RENISH to decrease balance
+			if (FlipScreen.flipScreenOn==true) {
+				CreditBalance creditBalance=CreditBalance.getInstance();
+				creditBalance.setBalance();				
+			}
 			
 			appController.setCurrentScreen(appController.getMyCardsMain());
 		}		 
