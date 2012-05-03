@@ -12,7 +12,7 @@ public class MyCardsMoreOptionsTest {
 	public void testGetBalance() {
 		float expectedf = 16.4f;
 		float actualf; 
-		CreditBalance bal = new CreditBalance();
+		CreditBalance bal = CreditBalance.getInstance();
 		actualf = bal.getBalance();
 		assertEquals("Valid!",expectedf, actualf);
 		//fail("Not yet implemented");
