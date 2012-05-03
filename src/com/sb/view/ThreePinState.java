@@ -1,7 +1,9 @@
 package com.sb.view;
 
 /*
- * Author:Manju Rajput Topic: ThreePinState (State Pattern for Pin Screen)
+ * Author:Manju Rajput 
+ * CMPE# : CMPE202
+ * Topic: ThreePinState (State Pattern for Pin Screen)
  *
  */
 
