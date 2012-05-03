@@ -11,7 +11,7 @@ public class MyCardsMoreOptionsTest {
 	@Test
 	public void testGetBalance() {
 		float expectedf = 16.4f;
-		float actualf; 
+		double actualf; 
 		CreditBalance bal = CreditBalance.getInstance();
 		actualf = bal.getBalance();
 		assertEquals("Valid!",expectedf, actualf);

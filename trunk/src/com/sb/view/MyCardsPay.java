@@ -103,17 +103,22 @@ public class MyCardsPay implements ScreenState {
 			mn = new Menu(appController);
 			mn.mousePressed(applet);
 		}
+		else if(applet.mouseX > 80 && applet.mouseX < 230
+				&& applet.mouseY > 90 && applet.mouseY < 145){
+			new BarCode(appController).mousePressed(applet);
+			/*int count=0;
+			if(count == 0){
+				CreditBalance balance = CreditBalance.getInstance();
+				balance.setBalance();
+				count++;
+			}*/
+		}
 		else if(applet.mouseX > (220 - 50) && applet.mouseX < (220 + 50)
 				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
 			/*tch = new TouchWhenDone(appController);
 			tch.draw(applet);*/
 			
-			//Added by RENISH to decrease balance
-			if (FlipScreen.flipScreenOn==true) {
-				CreditBalance creditBalance=CreditBalance.getInstance();
-				creditBalance.setBalance();				
-			}
-			
+		
 			appController.setCurrentScreen(appController.getMyCardsMain());
 		}		 
 	}// end of mousepressed

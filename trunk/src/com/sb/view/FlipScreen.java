@@ -12,7 +12,7 @@ import processing.core.PImage;
 public class FlipScreen implements ScreenState {
 
 	AppController appController;
-	static boolean flipScreenOn=false;
+	//static boolean flipScreenOn=false;
 	PFont f, f3;
 	
 	public FlipScreen(AppController appController) {
@@ -30,7 +30,7 @@ public class FlipScreen implements ScreenState {
 		String[] arr = appController.getCurrentScreen().toString().split("@");
 		String currentScreen = arr[0];
 		if(currentScreen.compareTo("com.sb.view.MyCardsMain") == 0){
-			flipScreenOn=false;
+			//flipScreenOn=false;
 			// Drawing the circle for Touch To Pay
 			applet.noStroke();
 			applet.fill(200);
@@ -55,7 +55,7 @@ public class FlipScreen implements ScreenState {
 		}
 		else{
 			//Author Anupama Patil
-			flipScreenOn=true;
+			//flipScreenOn=true;
 			f = applet.loadFont("Calibri-30.vlw");
 			applet.textFont(f, 11);
 			
