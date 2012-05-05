@@ -103,7 +103,7 @@ public class MyCardsPay implements ScreenState {
 			mn = new Menu(appController);
 			mn.mousePressed(applet);
 		}
-		
+		/**@Anupama - to implement chain of responsibility **/
 		new BarCode(appController).mousePressed(applet);
 		
 //		else if(applet.mouseX > 80 && applet.mouseX < 230
