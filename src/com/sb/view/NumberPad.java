@@ -5,7 +5,7 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
-public class KeyPad1 implements ScreenState {
+public class NumberPad implements ScreenState {
 	PFont f1;
 
 	public void setup(PApplet applet) {
