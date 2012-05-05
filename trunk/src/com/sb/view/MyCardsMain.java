@@ -1,7 +1,6 @@
 package com.sb.view;
-
+import java.text.DecimalFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 import com.sb.common.CreditBalance;
@@ -91,8 +90,17 @@ public class MyCardsMain implements ScreenState {
 		applet.fill(255);
 		f6 = applet.loadFont("Calibri-8.vlw");
 		applet.textFont(f6, 36);
+
+		//applet.text("$16.50", 70, 250);
+		//following two lines changed by Anupama to correct the display of balance
+		 DecimalFormat form = new DecimalFormat("0.00");
+		 applet.text(form.format(bal.getBalance()),70,250);
+		
+		 //applet.text(""+bal.getBalance(), 70, 250);
+
 		// applet.text("$16.50", 70, 250);
 		String balance = "" + bal.getBalance();
+
 
 		applet.text("" + balance.substring(0, 4), 70, 250);
 
