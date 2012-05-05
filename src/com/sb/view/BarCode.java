@@ -70,6 +70,7 @@ public class BarCode implements ScreenState {
 		//above code to display text in first rectangle of scan code
 		}
 
+	// author: Sachin Pisal
 	public void mousePressed(PApplet applet) {
 		if(applet.mouseX > 80 && applet.mouseX < 230
 				&& applet.mouseY > 90 && applet.mouseY < 145){
