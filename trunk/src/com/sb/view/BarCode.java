@@ -79,6 +79,7 @@ public class BarCode implements ScreenState {
 				count++;
 			}
 		}
+		new FlipScreen(appController).mousePressed(applet);
 	}// end of mousepressed
 
 	@Override
