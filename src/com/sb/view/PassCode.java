@@ -16,7 +16,7 @@ public class PassCode implements ScreenState {
 
 	PFont f2;
 	KeyPad keypad;
-	int passcodeLength;
+	private int passcodeLength;
 	final String validPin = "1234"; 
 
 	public PassCode(){

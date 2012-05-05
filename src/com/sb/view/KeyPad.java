@@ -18,7 +18,7 @@ public class KeyPad implements ScreenState{
 	PImage img;
 	PFont f;
 	PFont f1;
-	String input;
+	private String input;
 	PassCodeState state;
 	static String password = ""; 
 	
@@ -112,12 +112,6 @@ public class KeyPad implements ScreenState{
 		applet.fill(0);
 		applet.text("X", 215, 382);
 		
-	}
-	
-	
-	
-	public void setNumber(String input){
-		this.input = input;		
 	}
 	
 	public String getPassword(){
