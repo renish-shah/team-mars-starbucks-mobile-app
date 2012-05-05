@@ -17,7 +17,7 @@ public class PinScreen implements ScreenState {
 	AppController appController;
 	KeyPad keypad;
 	PassCode passcode;
-	String validPin = "1234";
+	final String validPin = "1234";
 
 	PImage img;
 	PFont f;
