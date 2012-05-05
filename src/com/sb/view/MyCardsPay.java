@@ -97,30 +97,35 @@ public class MyCardsPay implements ScreenState {
 		// but u shld have it .
 
 	public void mousePressed(PApplet applet) {
-		// Test if the cursor is over the Circle (Touch When Done)
+//		
 		if(applet.mouseX > 3 && applet.mouseX < 210
 				&& applet.mouseY > 352 && applet.mouseY < 397){
 			mn = new Menu(appController);
 			mn.mousePressed(applet);
 		}
-		else if(applet.mouseX > 80 && applet.mouseX < 230
-				&& applet.mouseY > 90 && applet.mouseY < 145){
-			new BarCode(appController).mousePressed(applet);
-			/*int count=0;
-			if(count == 0){
-				CreditBalance balance = CreditBalance.getInstance();
-				balance.setBalance();
-				count++;
-			}*/
-		}
-		else if(applet.mouseX > (220 - 50) && applet.mouseX < (220 + 50)
-				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
-			/*tch = new TouchWhenDone(appController);
-			tch.draw(applet);*/
-			
 		
-			appController.setCurrentScreen(appController.getMyCardsMain());
-		}		 
+		new BarCode(appController).mousePressed(applet);
+		
+//		else if(applet.mouseX > 80 && applet.mouseX < 230
+//				&& applet.mouseY > 90 && applet.mouseY < 145){
+//			new BarCode(appController).mousePressed(applet);
+//			/*int count=0;
+//			if(count == 0){
+//				CreditBalance balance = CreditBalance.getInstance();
+//				balance.setBalance();
+//				count++;
+//			}*/
+//		}
+//		else if(applet.mouseX > (220 - 50) && applet.mouseX < (220 + 50)
+//				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
+//			/*tch = new TouchWhenDone(appController);
+//			tch.draw(applet);*/
+//			
+//		
+//			appController.setCurrentScreen(appController.getMyCardsMain());
+//		}	
+		
+		
 	}// end of mousepressed
 
 	@Override
