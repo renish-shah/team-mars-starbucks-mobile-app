@@ -71,10 +71,11 @@ public class FlipScreen implements ScreenState {
 	}
 
 	public void mousePressed(PApplet applet) {
-		/*if(applet.mouseX > (224 - 50) && applet.mouseX < (224 + 50)
+		if(applet.mouseX > (224 - 50) && applet.mouseX < (224 + 50)
 				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
 			appController.setCurrentScreen(appController.getMyCardsMain());
-		}*/
+			
+		}
 	}// end of mousepressed
 
 	@Override
