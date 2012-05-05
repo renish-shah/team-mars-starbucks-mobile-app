@@ -17,7 +17,7 @@ public class AddCard implements ScreenState {
      */
  
     AppController appController;
-    KeyPad1 keys;
+    NumberPad keys;
     NewCard addCard = new NewCard();
     PApplet applet = new PApplet();
  
@@ -33,7 +33,7 @@ public class AddCard implements ScreenState {
     @Override
     public void setup(PApplet applet) {
  
-        keys = new KeyPad1();
+        keys = new NumberPad();
         img = applet.loadImage("Addcard.jpg");
         applet.size(262, 400);
         applet.background(50);
