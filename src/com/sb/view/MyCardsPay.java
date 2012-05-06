@@ -9,11 +9,32 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+ * This class is to display “ Pay on Go” Screen. This class displays the pay screen,
+ * but the barcode and touch when done components of the screen are divided into two 
+ * different classes. It also gets the Menu display from Menu Class.
+ * 
+ * @author Anupama Patil
+ * @author Renish Shah
+ * 
+ * @param appController	AppController Object
+ * @param f				fonts for the screen
+ * @param b 	 		For Images
+ * @param mn			Menu Object
+ * @param bcd			Barcode Object
+ * @param tch			Flip Screen Object
+ *
+ */
+
+
 public class MyCardsPay implements ScreenState {
 
-	// StarBucks app design - team MARS
-	// Author : Anupama Patil
-	// Modified by: RENIS SHAH
+	/**
+	 *@author Anupama Patil
+	 *
+	 *Initiates App Controller association
+	 * 
+	 */
 
 	AppController appController;
 
@@ -28,6 +49,15 @@ public class MyCardsPay implements ScreenState {
 	}
 
 	public void setup(PApplet applet) {
+		/**
+		 * This method is responsible for base sketch setup the UI Screen of the My Cards Pay Screen.
+		 * This method is called automatically by Processing and only once.
+		 * 
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 */
+
 		applet.size(262, 400);
 		applet.background(50);
 
@@ -76,7 +106,7 @@ public class MyCardsPay implements ScreenState {
 		applet.text("My Cards", 100, 30);// applet.text in Top applet.rectangle
 											// for :
 											// Screen pay
-		// -------------------------------------------------------------
+
 				
 		bcd = new BarCode(appController);
 		bcd.draw(applet);
@@ -88,45 +118,37 @@ public class MyCardsPay implements ScreenState {
 		mn.draw(applet);
 	}// end of function setup
 
-	// ---------------------------------------------------------------------------------------
-	// Following code for muse
-	// events---------------------------------------------------------
-	// ............................................................................................
 	public void draw(PApplet applet) {
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return none
+		 * 
+		 * Called by Processing for every frame of My Cards Pay Screen.
+		 */
+
 	}// this function is needed to make the mousepressesd() work.Its just empty
 		// but u shld have it .
 
 	public void mousePressed(PApplet applet) {
-//		
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 * 
+		 * Called once after every time a mouse button is pressed.
+		 * Here it is used to determine if Footer Menu Item or Barcode or 'Touch When Done' has been pressed
+		 */
+
 		if(applet.mouseX > 3 && applet.mouseX < 210
 				&& applet.mouseY > 352 && applet.mouseY < 397){
 			mn = new Menu(appController);
 			mn.mousePressed(applet);
 		}
-		/**@Anupama - to implement chain of responsibility **/
-		new BarCode(appController).mousePressed(applet);
-		
-//		else if(applet.mouseX > 80 && applet.mouseX < 230
-//				&& applet.mouseY > 90 && applet.mouseY < 145){
-//			new BarCode(appController).mousePressed(applet);
-//			/*int count=0;
-//			if(count == 0){
-//				CreditBalance balance = CreditBalance.getInstance();
-//				balance.setBalance();
-//				count++;
-//			}*/
-//		}
-//		else if(applet.mouseX > (220 - 50) && applet.mouseX < (220 + 50)
-//				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
-//			/*tch = new TouchWhenDone(appController);
-//			tch.draw(applet);*/
-//			
-//		
-//			appController.setCurrentScreen(appController.getMyCardsMain());
-//		}	
-		
-		
-	}// end of mousepressed
+
+		new BarCode(appController).mousePressed(applet);	
+	
+	}
 
 	@Override
 	public void drawArrow(int cx, int cy, int len, float angle, PApplet applet) {

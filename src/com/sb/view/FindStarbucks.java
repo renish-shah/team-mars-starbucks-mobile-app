@@ -1,7 +1,3 @@
-/********************************************/
-/***       Author : Sachin Pisal         ****/
-/********************************************/
-
 package com.sb.view;
 
 import com.sb.common.Menu;
@@ -12,6 +8,21 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+ * This class draws and setups the map which help the user to locate the nearby Starbucks. 
+ * When pointed on the arrow from the map, it shows him the exact address of the coffee shop. 
+ * Also, there is a search bar which the user can make use of to find Starbucks at a 
+ * specific location.
+ * 
+ * @author Sachin Pisal
+ * @param appController AppController
+ * @param mn Menu Object
+ * @param f,f3	Font Types
+ * @param b, MainCard, MyHome, Payments, MyRewards, Stores, Settings, TiltedArrow, Search	Image Types
+ *
+ */
+
+
 public class FindStarbucks implements ScreenState {
 
 	AppController appController;
@@ -20,10 +31,19 @@ public class FindStarbucks implements ScreenState {
 	Menu mn;
 
 	public FindStarbucks(AppController appController) {
+		/**
+		 * Constructor for FindStarbucks
+		 */
 		this.appController = appController;
 	}
 
 	public void setup(PApplet applet) {
+		/**
+		 * This method is responsible for base sketch setup the UI of MyRewards Screen.
+		 * This method is called automatically by Processing and only once.
+		 * @author Sachin Pisal
+		 * @return None
+		 */
 		applet.size(262, 400);
 		applet.background(50);
 
@@ -77,6 +97,12 @@ public class FindStarbucks implements ScreenState {
 	}
 
 	public void mousePressed(PApplet applet) {
+		/**
+		 * Called once after every time a mouse button is pressed.
+		 * Here it is used to determine if Footer Menu Item or not 
+		 * 
+		 */
+
 		if (applet.mouseX > 3 && applet.mouseX < 210 && applet.mouseY > 352
 				&& applet.mouseY < 397) {
 			mn = new Menu(appController);

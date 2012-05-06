@@ -8,14 +8,27 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+ * This class is used to provide  more options for starbucks app user. 
+ * This will enable user to refresh balance, reload card, view recent transactions.
+ * The reload card will enable to add balance using add card and refresh balance gives 
+ * the current balance in the account
+ * 
+ * @author Manasa Nagaraju
+ * @param f		font for the screen
+ * @param MainImage, MyCards, Payments, MyRewards, Stores, Settings 	 		For Images
+ * @param mn			Menu Object
+ */
+
+
 public class MyCardsMoreOptions implements ScreenState {
 
-	/***********
+	/**
 	 * Starbucks-MyCards MoreOptions Author-Manasa Sollepura Nagaraju 
 	 * CMPE-202-Spring2012
 	 * 
 	 * Modified by: RENIS SHAH
-	 **************/
+	 */
 
 	AppController appController;
 
@@ -29,6 +42,14 @@ public class MyCardsMoreOptions implements ScreenState {
 	Menu mn;
 
 	public void setup(PApplet applet) {
+		/**
+		 * 
+		 * This method sets up the MyCardsMoreOptions screen by  making use of  few applet properties.
+		 * 
+		 * @author: Manasa Nagaraju
+		 * @return None
+		 */
+
 		applet.size(262, 400); // size of the frame
 		applet.background(50); // screen bg color
 		applet.line(2, 2, 260, 2);// boundary line horizontal
@@ -104,6 +125,12 @@ public class MyCardsMoreOptions implements ScreenState {
 
 	// Methods to draw arrows
 	public void draw(PApplet applet) {
+		/**
+		 * This method calls the drawarrow()
+		 * @author: Manasa Nagaraju 
+		 * @return None
+		 */
+
 		applet.strokeWeight(2);
 		applet.stroke(86, 83, 90);
 		drawArrow(115, 203, 120, 5, applet);
@@ -113,6 +140,14 @@ public class MyCardsMoreOptions implements ScreenState {
 
 	@SuppressWarnings("static-access")
 	public void drawArrow(int cx, int cy, int len, float angle, PApplet applet) {
+		/**
+		 *  This method is called to draw the arrows on Reload-card,Auto reload,view 
+		 *  recent transactions
+		 *  
+		 *  @author Manasa Nagaraju
+		 *  @return None
+		 */
+
 		applet.pushMatrix();
 		applet.translate(cx, cy);
 		applet.rotate(applet.radians(angle));
@@ -123,7 +158,14 @@ public class MyCardsMoreOptions implements ScreenState {
 
 	@Override
 	public void mousePressed(PApplet applet) {
-		// TODO Auto-generated method stub
+		/**
+		 * This method is called whenever a mousePressed event is triggered from the AppController. 
+		 * Based on the x and y coordinates appropriate mousePressed method is invoked and either menu 
+		 * or main screen or add screen is set as current screen 
+		 * @author: Manasa Nagaraju
+		 * @return None
+		 */
+	
 		if(applet.mouseX > 3 && applet.mouseX < 210
 				&& applet.mouseY > 352 && applet.mouseY < 397){
 			mn = new Menu(appController);

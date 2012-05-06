@@ -15,10 +15,10 @@ import processing.core.PImage;
 public class MyCardsMain implements ScreenState {
 
 	public static int status = 0;
-	/************************************************************************************
+	/**
 	 * Author: Sindhuja Sundarraman Course#: CMPE 202 Topic: Code for Starbucks
 	 * App - Main Screen Modified by: RENIS SHAH
-	 ************************************************************************************/
+	 */
 
 	AppController appController;
 

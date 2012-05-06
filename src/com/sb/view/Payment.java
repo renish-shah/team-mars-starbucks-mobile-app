@@ -1,7 +1,3 @@
-/********************************************/
-/***       Author : Sachin Pisal         ****/
-/********************************************/
-
 package com.sb.view;
 
 import com.sb.common.Menu;
@@ -12,7 +8,28 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+ * This class is to display the payment setting screen that is displayed 
+ * on clicking “payment menu”. This class is just to mock this Screen.
+ * 
+ * @author Anupama Patil
+ * @author Sachin Pisal
+ * 
+ * @param appController 	Object of AppController class for communication
+ * @param f, f3				fonts for the screen
+ * @param b, MainCard, MyHome, Payments, MyRewards, Stores, Settings, TiltedArrow, Search  	For Images
+ * 
+ *
+ */
+
 public class Payment implements ScreenState {
+	
+	/**
+	 *@author Anupama Patil
+	 *
+	 *Initiates App Controller association
+	 * 
+	 */
 
 	AppController appController;
 	PFont f, f3;
@@ -25,6 +42,15 @@ public class Payment implements ScreenState {
 	}
 
 	public void setup(PApplet applet) {
+		/**
+		 * This method is responsible for base sketch setup the UI Screen of the Payment Screen.
+		 * This method is called automatically by Processing and only once.
+		 * 
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 */
+
 		applet.size(262, 400);
 		applet.background(50);
 
@@ -69,17 +95,29 @@ public class Payment implements ScreenState {
 		applet.fill(255);
 		applet.text("Settings", 220, 395); // Text for Settings
 
-	}// end of function setup
-
-	// ---------------------------------------------------------------------------------------
-	// Following code for mouse
-	// events---------------------------------------------------------
-	// ............................................................................................
+	}
+	
 	public void draw(PApplet applet) {
-	}// this function is needed to make the mousepressesd() work.Its just empty
-		// but u shld have it .
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return none
+		 * 
+		 * Called by Processing for every frame of Payment Screen.
+		 */
+
+	}
 
 	public void mousePressed(PApplet applet) {
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 * 
+		 * Called once after every time a mouse button is pressed.
+		 * Here it is used to determine which Footer Menu Item has been pressed
+		 */
+
 		// Test if the cursor is over the Circle (Touch When Done)
 		if (applet.mouseX > 3 && applet.mouseX < 210 && applet.mouseY > 352
 				&& applet.mouseY < 397) {

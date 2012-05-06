@@ -11,14 +11,17 @@ import com.sb.common.Menu;
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
 
-/**
- * @author RENISH
- * 
- */
-public class MyRewards implements ScreenState {
 
-	
-	// Author: RENIS SHAH
+/**
+ * This class implements ScreenState interface, draws MyRewards Screen 
+ * and also handles mouse press events of the screen
+ * @author RENISH
+ * @param MainImage, MyCards, Payments, MyRewards, Stores, Settings Image for the Screen
+ * @param mn Menu Object
+ */
+
+
+public class MyRewards implements ScreenState {
 
 	AppController appController;
 	PImage MainImage, MyCards, Payments, MyRewards, Stores, Settings;
@@ -30,6 +33,13 @@ public class MyRewards implements ScreenState {
 
 	@Override
 	public void setup(PApplet applet) {
+		/**
+		 * @author Renish Shah
+		 * @return None
+		 * This method is responsible for base sketch setup the UI of My Rewards Screen.
+		 * This method is called automatically by Processing and only once.
+		 * 
+		 */
 
 		PFont f = applet.loadFont("Calibri-Bold-30.vlw");
 		/* Creating the main boundary */
@@ -85,7 +95,12 @@ public class MyRewards implements ScreenState {
 
 	@Override
 	public void mousePressed(PApplet applet) {
-		// TODO Auto-generated method stub
+		/**
+		 * Based on the mouse coordinates pressed in the Footer Menu Item, 
+		 * the appropriate Menu item will be executed
+		 * 
+		 */
+
 		if(applet.mouseX > 3 && applet.mouseX < 210
 				&& applet.mouseY > 352 && applet.mouseY < 397){
 			mn = new Menu(appController);
@@ -95,9 +110,12 @@ public class MyRewards implements ScreenState {
 
 	@Override
 	public void draw(PApplet applet) {
+		/**
+		 * @author Renish Shah
+		 * @Return None
+		 */
 		applet.strokeWeight(2);
 		applet.stroke(86, 83, 90);
-	//	drawArrow(115, 203, 120, 5, applet);
 		drawArrow(115, 268, 120, 5, applet);
 		drawArrow(115, 303, 120, 5, applet);
 
@@ -105,6 +123,11 @@ public class MyRewards implements ScreenState {
 
 	@Override
 	public void drawArrow(int cx, int cy, int len, float angle, PApplet applet) {
+		
+		/**
+		 * @author Renish Shah
+		 * @return None
+		 */
 		applet.pushMatrix();
 		applet.translate(cx, cy);
 		applet.rotate(applet.radians(angle));

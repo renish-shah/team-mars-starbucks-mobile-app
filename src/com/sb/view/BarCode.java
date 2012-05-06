@@ -10,6 +10,21 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+
+/**
+ *  This class is to display barcode on pay on go Screen.
+
+ *  When user clicks on barcode the total credit balance of $20 is reduced  by $3.50 . 
+ * 
+ * @author Anupama Patil
+ * 
+ * @param appController		AppController Object
+ * @param f, f3		fonts for the screen
+ * @param b  		For Images
+ * @param balance	CreditBalance Object
+ * @param count 	no of times the barcode is scanned.
+ */
+
 public class BarCode implements ScreenState {
 
 	AppController appController;
@@ -23,13 +38,27 @@ public class BarCode implements ScreenState {
 	}
 
 	public void setup(PApplet applet) {
-	}// end of function setup
+		
+		/**
+		 * This method is responsible for base sketch setup the UI Screen of barcode.
+		 * This method is called automatically by Processing and only once.
+		 * 
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 */
 
-	// ---------------------------------------------------------------------------------------
-	// Following code for muse
-	// events---------------------------------------------------------
-	// ............................................................................................
+	}
+	
 	public void draw(PApplet applet) {
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return none
+		 * 
+		 * Called by Processing for every frame of the  Screen.
+		 */
+
 		f = applet.loadFont("Calibri-30.vlw");
 		applet.textFont(f, 11);
 
@@ -70,8 +99,17 @@ public class BarCode implements ScreenState {
 		//above code to display text in first rectangle of scan code
 		}
 
-	// author: Sachin Pisal
 	public void mousePressed(PApplet applet) {
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 * 
+		 * Called once after every time a mouse button is pressed.
+		 * Here when appropriate mouse coordinates are pressed, then creditbalance object
+		 * is created and the balance is set.
+		 */
+
 		if(applet.mouseX > 80 && applet.mouseX < 230
 				&& applet.mouseY > 90 && applet.mouseY < 145){
 			if(count == 0){

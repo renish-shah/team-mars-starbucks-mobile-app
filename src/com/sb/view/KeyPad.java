@@ -1,11 +1,18 @@
 package com.sb.view;
 
-/*
- * Author: Manju Rajput 
- * CMPE# : CMPE202
- * Topic: KeyPad
+/**
+ * Pin Screen comprises of KeyPad and PassCode screens. The KeyPad screen represents the 
+ * numbers (0-9)  and backspace displayed as key pad on the screen.
+ * When a user presses a number on the screen, the mousePressed event is triggered 
+ * to capture the number which is pressed.
+ * 
+ * @author:Manju Rajput
+ * @param  img Image Type
+ * @param f, f1 Font types
+ * @param input	stores the inputted digit
  *
  */
+
 
 import com.sb.controller.ScreenState;
 
@@ -14,26 +21,26 @@ import processing.core.PFont;
 import processing.core.PImage;
 
 public class KeyPad implements ScreenState{
-	
+
 	PImage img;
 	PFont f;
 	PFont f1;
 	private String input;
 	PassCodeState state;
 	static String password = ""; 
-	
+
 	final private String[][] keyPadNumber = {
 			{"1","2","3"},
 			{"4","5","6"},
 			{"7","8","9"},
 			{null, "0"} };
-	
+
 	PassCodeState NoPinState;
 	PassCodeState OnePinState;
 	PassCodeState TwoPinState;
 	PassCodeState ThreePinState;
 	PassCodeState FourPinState;		
-	
+
 
 	public KeyPad() {
 		NoPinState = new NoPinState(this);
@@ -43,7 +50,7 @@ public class KeyPad implements ScreenState{
 		FourPinState = new FourPinState(this);
 		state = NoPinState;	
 	}
-	
+
 	public void setup(PApplet applet) {
 
 	}
@@ -51,13 +58,20 @@ public class KeyPad implements ScreenState{
 
 	@Override
 	public void mousePressed(PApplet applet) {		
-		
+
 	}
 
 
 	@Override
 	public void draw(PApplet applet) {
-		
+		/**
+		 * 
+		 * This method is used to draw KeyPad on the screen using applet.
+		 * 
+		 * @author Manju Rajput
+		 * @return none
+		 * 
+		 */
 		/* Creating the main boundary */
 		applet.size(262, 400);
 		applet.background(50);
@@ -111,71 +125,173 @@ public class KeyPad implements ScreenState{
 
 		applet.fill(0);
 		applet.text("X", 215, 382);
-		
-	}
-	
-	public String getPassword(){
-		return password;
-	}
-	
-	public void setPassword(String password){
-		KeyPad.password = password;
-	}
-	
-	public String pressedNumber(int x, int y){
-		state.pressedNumber(keyPadNumber[y-1][x-1]);
-		return keyPadNumber[y-1][x-1];
-	}
-	
-		
-	public String backspace(){
-		state.backspace();
-		return "bk";
-	}
 
+	}
 
 	@Override
 	public void drawArrow(int cx, int cy, int len, float angle, PApplet applet) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
-	public void setState(PassCodeState state){
-		this.state=state;
+
+	public String getPassword(){
+		/**
+		 * 
+		 * This method is used to retrieve the entered password 
+		 * 
+		 * @author Manju Rajput
+		 * @return password returns the entered password as String
+		 * 
+		 */
+
+		return password;
 	}
-	
+
+	public void setPassword(String password){
+
+		/**
+		 * 
+		 * This method is used to set the Password in the KeyPad class
+		 * 
+		 * @author Manju Rajput
+		 * @return none
+		 * 
+		 */
+
+		KeyPad.password = password;
+	} 
+
+
 	public String getState(){
+		/**
+		 * 
+		 * This method is used to return the state.
+		 * 
+		 * @author Manju Rajput
+		 * @return pin state as String
+		 * 
+		 */
+
 		return state.getState();
 	}
-	
+
+	public void setState(PassCodeState state){
+		/**
+		 * 
+		 * This method is used to set the PassCode state.
+		 * 
+		 * @author Manju Rajput
+		 * @return none
+		 * 
+		 */
+
+		this.state=state;
+	}
+
+
+
 	public PassCodeState getNoPinState(){
+		/**
+		 * 
+		 * This method is used to return the NoPinstate
+		 * 
+		 * @author Manju Rajput
+		 * @return NoPinState PasscodeState
+		 * 
+		 */
 		return NoPinState;
 	}
 
 	public PassCodeState getOnePinState(){
+		/**
+		 * 
+		 * This method is used to return the OnePinstate
+		 * 
+		 * @author Manju Rajput
+		 * @return OnePinState PasscodeState
+		 * 
+		 */
 		return OnePinState;
 	}
 
 	public PassCodeState getTwoPinState(){
+		/**
+		 * 
+		 * This method is used to return the TwoPinstate.
+		 * 
+		 * @author Manju Rajput
+		 * @return twoPinState	 PasscodeState
+		 * 
+		 */
 		return TwoPinState;
 	}
 
 	public PassCodeState getThreePinState(){
+		/**
+		 * 
+		 * This method is used to return the ThreePinstate
+		 * 
+		 * @author Manju Rajput
+		 * @return ThreePinState	PasscodeState
+		 * 
+		 */
 		return ThreePinState;
 	}
-	
+
 	public PassCodeState getFourPinState(){
+		/**
+		 * 
+		 * This method is used to return the FourPinState
+		 * 
+		 * @author Manju Rajput
+		 * @return FourPinState	 PasscodeState
+		 * 
+		 */
 		return FourPinState;
 	}
-	
+
+
+	public String pressedNumber(int x, int y){
+		/**
+		 * 
+		 * This method is used to return presses key pad number
+		 * 
+		 * @author Manju Rajput
+		 * @return keyPadNumber String
+		 * 
+		 */
+		state.pressedNumber(keyPadNumber[y-1][x-1]);
+		return keyPadNumber[y-1][x-1];
+	}
+
+
+	public String backspace(){
+		/**
+		 * 
+		 * This method is used to return String for backspace when pressed
+		 * 
+		 * @author Manju Rajput
+		 * @return backspace String
+		 * 
+		 */	
+
+		state.backspace();
+		return "bk";
+	}
 
 	public void updatePassword(String num){
-		
+		/**
+		 * 
+		 * This method is used to update the password with the passed string.
+		 * 
+		 * @author Manju Rajput
+		 * @return none
+		 * 
+		 */
 		if(num == "" && password.length()>0)
 			password=password.substring(0,password.length()-1);
 		else 
-			password += num;
-			
+			password += num;			
 	}
 
 
