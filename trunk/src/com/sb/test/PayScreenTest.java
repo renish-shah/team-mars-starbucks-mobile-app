@@ -1,18 +1,14 @@
 package com.sb.test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import com.sb.common.CreditBalance;
-import com.sb.view.AddCard;
 import com.sb.view.MyCardsPay;
 import junit.framework.Assert;
 import mockit.NonStrict;
 import mockit.NonStrictExpectations;
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
-import com.sb.view.MyCardsPay;
 /**
   * @author Anupama Patil
  *

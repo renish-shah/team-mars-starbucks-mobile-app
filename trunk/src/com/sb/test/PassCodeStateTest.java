@@ -9,14 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.sb.controller.AppController;
-import com.sb.view.FourPinState;
 import com.sb.view.KeyPad;
-import com.sb.view.NoPinState;
-import com.sb.view.OnePinState;
-import com.sb.view.PassCode;
-import com.sb.view.PassCodeState;
-import com.sb.view.ThreePinState;
-import com.sb.view.TwoPinState;
 
 /**
  * @author Manju Rajput

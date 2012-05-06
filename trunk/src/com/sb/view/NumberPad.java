@@ -5,6 +5,16 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+ *  The NumberPad class draws the keypad on the screen.
+ *	This class is reusable and can be used in other 
+ *	classes to display a keypad when needed.
+ * 
+ * @author:Madhumita Vimalanathan
+ * @param f1 Font types
+ * 
+ */
+
 public class NumberPad implements ScreenState {
 	PFont f1;
 
@@ -19,6 +29,15 @@ public class NumberPad implements ScreenState {
 
 	@Override
 	public void draw(PApplet applet) {
+		/**
+		 * 
+		 * This method is used to draw numbers 0-9 
+		 * and the backspace symbol in the AddCard Screen.
+		 * 
+		 * @author Madhumita Vimalanathan
+		 * @return none
+		 * 
+		 */
 		f1 = applet.loadFont("Calibri-Bold-30.vlw");
 		/* Creating the main boundary */
 		applet.fill(255);

@@ -9,6 +9,20 @@ import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
 
+/**
+ * This class is to switch between main screen and pay screen. 
+ * 
+ * @author Anupama Patil
+ * @author Renish Shah
+ * @author Sachin Pisal
+ * 
+ * @param appcontroller		AppController Object
+ * @param f, f3				fonts for the screen
+ * @param b		 	 		For Images
+ * @param balance			CreditBalance Object
+ * @param count 			no of times the barcode is scanned.
+ */
+
 public class FlipScreen implements ScreenState {
 
 	AppController appController;
@@ -20,13 +34,24 @@ public class FlipScreen implements ScreenState {
 	}
 
 	public void setup(PApplet applet) {
-	}// end of function setup
-
-	// ---------------------------------------------------------------------------------------
-	// Following code for muse
-	// events---------------------------------------------------------
-	// ............................................................................................
+		/**
+		 * This method is responsible for base sketch setup the UI Screen.
+		 * Has no implementation here.
+		 * 
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 */		
+	}
 	public void draw(PApplet applet) {
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return none
+		 * 
+		 * Called by Processing for every frame of the  Screen.
+		 */
+		
 		String[] arr = appController.getCurrentScreen().toString().split("@");
 		String currentScreen = arr[0];
 		if(currentScreen.compareTo("com.sb.view.MyCardsMain") == 0){
@@ -54,8 +79,6 @@ public class FlipScreen implements ScreenState {
 			applet.text("to Pay", 205, 197);
 		}
 		else{
-			//Author Anupama Patil
-			//flipScreenOn=true;
 			f = applet.loadFont("Calibri-30.vlw");
 			applet.textFont(f, 11);
 			
@@ -71,6 +94,14 @@ public class FlipScreen implements ScreenState {
 	}
 
 	public void mousePressed(PApplet applet) {
+		/**
+		 * @author Anupama Patil
+		 * 
+		 * @return None
+		 * 
+		 * Called once after every time a mouse button is pressed.
+		 */
+
 		if(applet.mouseX > (224 - 50) && applet.mouseX < (224 + 50)
 				&& applet.mouseY > (180 - 50) && applet.mouseY < (180 + 50)){
 			appController.setCurrentScreen(appController.getMyCardsMain());

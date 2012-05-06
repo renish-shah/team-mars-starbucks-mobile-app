@@ -11,8 +11,9 @@ import org.junit.Test;
 import com.sb.view.KeyPad;
 
 /**
+ * This is used to test the KeyPad class
+ * 
  * @author Manju Rajput
- * Topic: To test the KeyPad class
  */
 
 public class KeyPadTest {

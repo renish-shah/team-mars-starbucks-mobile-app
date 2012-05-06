@@ -7,10 +7,19 @@ import com.sb.view.FindStarbucksMenuItem;
 import com.sb.view.MenuItem;
 import com.sb.view.MyRewardMenuItem;
 import com.sb.view.PaymentMenuItem;
-
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
+
+/**
+ * Menu Class is responsible for drawing the footer Menu Items in all the screens
+ * of the starbucks Application. Based on the Mouse Coordinates pressed, the screen transfers 
+ * to other screens such as My Cards Main, My Cards Pay, My Cards Rewards and Find Starbucks Store.
+ * 
+ * @author Sindhuja Sundarraman
+ * @author Anupama Patil
+ */ 
+
  
 public class Menu implements ScreenState {
  
@@ -25,12 +34,18 @@ public class Menu implements ScreenState {
     public void setup(PApplet applet) {
     }// end of function setup
  
-    /************************************************************************************
+    /**
      * Modified By: Madhumita V 
      * Course#: CMPE 202 
      * Topic: Command Pattern implementation for Menu toolbar 
-     **************************************************************************************/
+     */
     public MenuItem getMenuItem(int x, int y) {
+
+    	/**
+    	 * Command Pattern Implementation of the Menu Toolbar
+    	 * @author Madhumita Vimalanathan
+    	 * @return Menuitem Object
+    	 */
         MenuItem menuItem = null;
         if (x > 3 && x < 53 && y > 352 && y < 397) {
             menuItem = new CardMainMenuItem();
@@ -47,11 +62,7 @@ public class Menu implements ScreenState {
         return menuItem;
          
     }
-    /************************************************************************************
-     * Author: Sindhuja Sundarraman 
-     * Course#: CMPE 202 
-     * Topic: Code for generating Menu items toolbar
-     *************************************************************************************/
+
     public void draw(PApplet applet) {
         applet.noStroke();
         applet.line(0, 350, 300, 350);
@@ -108,6 +119,11 @@ public class Menu implements ScreenState {
     }
  
     public void mousePressed(PApplet applet) {
+    	/**
+    	 * Called once after every time a mouse button is pressed. Executes appropriate screen code.
+    	 * @author Madhumita Vimalanathan
+    	 * 
+    	 */
         MenuItem menuItem = getMenuItem(applet.mouseX, applet.mouseY);
         menuItem.execute(appController);
     }// end of mousepressed

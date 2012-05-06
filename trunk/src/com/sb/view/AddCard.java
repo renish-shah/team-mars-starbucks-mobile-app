@@ -7,15 +7,29 @@ import com.sb.controller.ScreenState;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
+
+/**
+ * The Add Card Screen is implemented using 2  classes AddCard and NumberPad. 
+ * This allows for both the classes to be reused when needed. AddCard is responsible for 
+ * calling the NumberPad draw method when the current screen is set to AddCard. The AddCard screen 
+ * has the numbers 0-9  and backspace displayed on the screen. When a number is pressed on the 
+ * screen, the mousePressed event is triggered to capture the number which is pressed and displays 
+ * the numbers on the screen.
+ * 
+ * @author Madhumita Vimalanathan
+ * @param f,f1 Font Types
+ * @param img Image
+ * @param addcard NewCard Object
+ * @param appController AppController object
+ * @param keys KeyPad
+ * @param applet	PApplet Object
+ *
+ */
+
  
 public class AddCard implements ScreenState {
  
     private static final long serialVersionUID = 1L;
-    /***************************************
-     * SCREEN:Add Card AUTHOR:Madhumita V
-     *************************************** 
-     */
- 
     AppController appController;
     NumberPad keys;
     NewCard addCard = new NewCard();
@@ -32,12 +46,19 @@ public class AddCard implements ScreenState {
  
     @Override
     public void setup(PApplet applet) {
- 
+    	
+    	/**
+    	 * This method is used to initialize and setup AddCard instance.
+    	 * @author Madhumita Vimalanathan
+    	 * @return None
+    	 */
         keys = new NumberPad();
+        
         img = applet.loadImage("Addcard.jpg");
         applet.size(262, 400);
         applet.background(50);
-        /* Drawing card image to screen co-ordinates */
+        
+        // Drawing card image to screen co-ordinates 
         applet.image(img, 30, 65, 200, 125);
         applet.fill(176, 177, 178, 220);
         applet.rect(0, 240, 265, 318);
@@ -71,7 +92,18 @@ public class AddCard implements ScreenState {
  
     @Override
     public void mousePressed(PApplet applet) {
-        // TODO Auto-generated method stub
+    	
+    	/**
+    	 * This method is used to initialize and setup MyCardOptions instance.
+    	 * This method is invoked when a mousePressed event is triggered from the AppController. 
+    	 * Based on the x and y coordinates appropriate mousePressed method is invoked.  
+    	 * The mousePressed method  alters the color of the pressed button and calls 
+    	 * the setCurrent Screen methods depending on the button that was pressed.
+    	 * 
+    	 * @author Madhumita Vimalanathan
+    	 * @param pressedNumber	stores the number pressed
+    	 *
+    	 */
         Integer pressedNumber = null;
         boolean removeDigit = false;
  
@@ -123,9 +155,6 @@ public class AddCard implements ScreenState {
         }
         else if (applet.mouseX > 180 - 75 && applet.mouseX < 180 + 75
                 && applet.mouseY > 5 - 35 && applet.mouseY < 5 + 35) {
-            // When Button Add New is pressed
-        	
-        	//Added by RENISH to add New Balance
         	CreditBalance creditBalance=CreditBalance.getInstance();
             creditBalance.addNewCardbalance();
             applet.fill(250, 255, 155, 220);
@@ -143,7 +172,6 @@ public class AddCard implements ScreenState {
            System.out.println("CardNum:::: length = " + addCard.getCardNoLength() +", CurrentNum = " +pressedNumber +", CardNum = "+ addCard.getCardNumber());
         } else {
              if ( pressedNumber != null) {
-                   //String displaypressedNumber="*";
                     addCard.setCardCodeDigit(pressedNumber);
                     
              } else if ( removeDigit) {
@@ -155,8 +183,12 @@ public class AddCard implements ScreenState {
  
     @Override
     public void draw(PApplet applet) {
-        // TODO Auto-generated method stub
-             
+    	/**
+    	 * This method is used to draw components in the AddCard Screen.
+    	 * 
+    	 * @author Madhumita Vimalanathan
+    	 */
+            
             f = applet.loadFont("Calibri-30.vlw");
             applet.textFont(f, 20);
             applet.fill(0);

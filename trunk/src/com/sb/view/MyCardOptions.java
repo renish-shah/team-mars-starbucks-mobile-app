@@ -7,16 +7,20 @@ import com.sb.controller.ScreenState;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PImage;
+
+/**
+ * The MyCardOptions  screen is invoked when the card balance button is clicked on MyCardsMain. 
+ * MyCardOptions screen has three buttons, Reload Card, Refresh Balance, More Options and Add Card.
+ * 
+ * @author Madhumita Vimalanathan
+ * @param img Image Type 
+ * @param f, f1 Font Types
+ * @param input stores inputted digit
+ */
  
 public class MyCardOptions implements ScreenState {
  
     private static final long serialVersionUID = 1L;
-    /***************************************
-     * AUTHOR:Madhumita V
-     * SCREEN:MY CARD OPTIONS 
-     * Modified by RENIS SHAH
-     ***************************************
-     */
  
     /* Loading image and Fonts */
     PImage CardImage, MyHome, Payments, MyRewards, Stores, Settings;
@@ -33,6 +37,10 @@ public class MyCardOptions implements ScreenState {
  
     @Override
     public void setup(PApplet applet) {
+    	/**
+    	 * This method is used to initialize and setup MyCardOptions instance.
+    	 * @author Madhumita Vimalanathan
+    	 */
         CardImage = applet.loadImage("StarbucksSpecialEditionCard.jpg");
         f = applet.loadFont("Calibri-Bold-30.vlw");
         f1 = applet.loadFont("Calibri-30.vlw");
@@ -103,20 +111,16 @@ public class MyCardOptions implements ScreenState {
  
     @Override
     public void mousePressed(PApplet applet) {
-        /*if (applet.mouseX > 30 - 205 && applet.mouseX < 30 + 205
-                && applet.mouseY > 195 - 35 && applet.mouseY < 195 + 35) {
-            // When Button Reload Card is pressed
-            applet.fill(250, 255, 155, 220);
-            applet.rect(30, 195, 205, 35, 8, 8, 8, 8);
-        }
- 
-        else if (applet.mouseX > 30 - 205 && applet.mouseX < 30 + 205
-                && applet.mouseY > 240 - 35 && applet.mouseY < 240 + 35) {
-            // When Button Refresh Balance is pressed
-            applet.fill(250, 255, 155, 220);
-            applet.rect(30, 240, 205, 35, 8, 8, 8, 8);
- 
-        } else*/ if (applet.mouseX > 30 && applet.mouseX < 235
+    	/**
+    	 * This method is used to initialize and setup MyCardOptions instance.
+    	 * This method is invoked when a mousePressed event is triggered from the AppController. 
+    	 * Based on the x and y coordinates appropriate mousePressed method is invoked.  
+    	 * The mousePressed method  alters the color of the pressed button and calls 
+    	 * the setCurrent Screen methods depending on the button that was pressed.
+    	 * 
+    	 * @author Madhumita Vimalanathan
+    	 */
+    	if (applet.mouseX > 30 && applet.mouseX < 235
                 && applet.mouseY > 195 && applet.mouseY < 230) {
             // When Button More Options is pressed
             applet.fill(250, 255, 155, 220);

@@ -1,11 +1,12 @@
 package com.sb.view;
 
-/*
- * Author:Manju Rajput 
- * CMPE# : CMPE202
- * Topic: NoPinState (State Pattern for Pin Screen)
+/**
+ * It is used to implement State pattern in PinScreen. 
+ * It represents the No Pin State of the PassCode.
+ * @author Manju Rajput
  *
  */
+
 
 public class NoPinState implements PassCodeState{
 	
@@ -17,6 +18,15 @@ public class NoPinState implements PassCodeState{
 	
 	@Override
 	public void pressedNumber(String input){
+		/**
+		 * 
+		 * This method calls KeyPad’s update password based on the input String and
+		 *  then set the appropriate passcode state 
+		 * @author Manju Rajput
+		 * @return None
+		 * 
+		 */
+
 		keypad.updatePassword(input);
 		keypad.setState(keypad.getOnePinState());
 
@@ -24,12 +34,31 @@ public class NoPinState implements PassCodeState{
 
 	@Override
 	public void backspace() {
+		/**
+		 * 
+		  * This method calls KeyPad’s update password based on the 
+		 * input String and then set the appropriate passcode state. 
+		 * 
+		 * @author Manju Rajput
+		 * @return None
+		 * 
+		 */
+
 		keypad.updatePassword("");
 		keypad.setState(keypad.getNoPinState());		
 	}
 
 	@Override
 	public String getState() {
+		/**
+		 * 
+		  * This method is used to return the passcode state 
+		 *  
+		 * @author Manju Rajput
+		 * @return None
+		 * 
+		 */
+
 		return "NoPinState";
 	}
 
