@@ -13,11 +13,15 @@ import org.junit.Test;
 
 import com.sb.controller.AppController;
 import com.sb.controller.ScreenState;
+import com.sb.view.AddCard;
+import com.sb.view.FindStarbucks;
 import com.sb.view.MyCardOptions;
 import com.sb.view.MyCardsMain;
 import com.sb.view.MyCardsMoreOptions;
 import com.sb.view.MyCardsPay;
 import com.sb.view.MyRewards;
+import com.sb.view.Payment;
+import com.sb.view.PinScreen;
 
 /**
  * @author RENISH
@@ -105,6 +109,43 @@ public class AppControllerTest {
 		Assert.assertEquals(MyCardsPay.class, returnedScreenState.getClass());
 	}
 	
+	@Test
+	public void testPinScreenMousePressed() {
+
+		applet = new AppController();
+		applet.setCurrentScreen(new PinScreen(applet));
+
+		ScreenState returnedScreenState = applet.getCurrentScreen();
+		Assert.assertEquals(PinScreen.class, returnedScreenState.getClass());
+	}
+	
+	@Test
+	public void testAddCardMousePressed() {
+
+		applet = new AppController();
+		applet.setCurrentScreen(new AddCard(applet));
+
+		ScreenState returnedScreenState = applet.getCurrentScreen();
+		Assert.assertEquals(AddCard.class, returnedScreenState.getClass());
+	}
+	@Test
+	public void testFindStarbucksMousePressed() {
+
+		applet = new AppController();
+		applet.setCurrentScreen(new FindStarbucks(applet));
+
+		ScreenState returnedScreenState = applet.getCurrentScreen();
+		Assert.assertEquals(FindStarbucks.class, returnedScreenState.getClass());
+	}		
+	@Test
+	public void testPaymentMousePressed() {
+
+		applet = new AppController();
+		applet.setCurrentScreen(new Payment(applet));
+
+		ScreenState returnedScreenState = applet.getCurrentScreen();
+		Assert.assertEquals(Payment.class, returnedScreenState.getClass());
+	}		
 
 	/*
 	 * @NonStrict AppController applet;
