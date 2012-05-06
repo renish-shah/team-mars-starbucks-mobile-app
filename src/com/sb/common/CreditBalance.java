@@ -19,7 +19,7 @@ public class CreditBalance {
 	}
 	
 	public static float setBalance() {
-		return balance -= 3.6;
+		return balance -= 3.15;
 	}
 	
 	//Added by RENISH to add new card balance
