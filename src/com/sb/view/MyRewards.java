@@ -17,7 +17,8 @@ import com.sb.controller.ScreenState;
  */
 public class MyRewards implements ScreenState {
 
-	/* Modified by RENISH */
+	
+	// Author: RENIS SHAH
 
 	AppController appController;
 	PImage MainImage, MyCards, Payments, MyRewards, Stores, Settings;
