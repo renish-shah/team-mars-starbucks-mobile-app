@@ -15,7 +15,7 @@ import processing.core.PImage;
  * different classes. It also gets the Menu display from Menu Class.
  * 
  * @author Anupama Patil
- * @author Renish Shah
+ * 
  * 
  * @param appController	AppController Object
  * @param f				fonts for the screen
