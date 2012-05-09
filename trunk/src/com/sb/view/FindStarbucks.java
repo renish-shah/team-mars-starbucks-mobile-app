@@ -9,19 +9,23 @@ import processing.core.PFont;
 import processing.core.PImage;
 
 /**
- * This class draws and setups the map which help the user to locate the nearby Starbucks. 
- * When pointed on the arrow from the map, it shows him the exact address of the coffee shop. 
- * Also, there is a search bar which the user can make use of to find Starbucks at a 
- * specific location.
+ * This class draws and setups the map which help the user to locate the nearby
+ * Starbucks. When pointed on the arrow from the map, it shows him the exact
+ * address of the coffee shop. Also, there is a search bar which the user can
+ * make use of to find Starbucks at a specific location.
  * 
  * @author Sachin Pisal
- * @param appController AppController
- * @param mn Menu Object
- * @param f,f3	Font Types
- * @param b, MainCard, MyHome, Payments, MyRewards, Stores, Settings, TiltedArrow, Search	Image Types
- *
+ * @param appController
+ *            AppController
+ * @param mn
+ *            Menu Object
+ * @param f
+ *            ,f3 Font Types
+ * @param b
+ *            , MainCard, MyHome, Payments, MyRewards, Stores, Settings,
+ *            TiltedArrow, Search Image Types
+ * 
  */
-
 
 public class FindStarbucks implements ScreenState {
 
@@ -29,6 +33,17 @@ public class FindStarbucks implements ScreenState {
 	PFont f;
 	PImage b, TiltedArrow, Search;
 	Menu mn;
+
+	public String setupFindStarbucks() {
+
+		setup(new AppController());
+		return "success";
+	}
+
+	public String drawFindStarbucks() {
+		draw(new AppController());
+		return "success";
+	}
 
 	public FindStarbucks(AppController appController) {
 		/**
@@ -39,8 +54,10 @@ public class FindStarbucks implements ScreenState {
 
 	public void setup(PApplet applet) {
 		/**
-		 * This method is responsible for base sketch setup the UI of MyRewards Screen.
-		 * This method is called automatically by Processing and only once.
+		 * This method is responsible for base sketch setup the UI of MyRewards
+		 * Screen. This method is called automatically by Processing and only
+		 * once.
+		 * 
 		 * @author Sachin Pisal
 		 * @return None
 		 */
@@ -61,7 +78,7 @@ public class FindStarbucks implements ScreenState {
 		applet.rect(0, 0, 265, 47);
 		applet.fill(255);
 		applet.textFont(f, 20);
-		
+
 		applet.fill(21, 67, 54);
 		applet.rect(8, 10, 30, 30, 8, 8, 8, 8);
 		applet.fill(255);
@@ -85,7 +102,7 @@ public class FindStarbucks implements ScreenState {
 		applet.fill(255);
 		Search = applet.loadImage("Stores.png");
 		applet.image(Search, 230, 13, 25, 25);
-		
+
 		b = applet.loadImage("Map.png");
 		applet.image(b, 0, 45);
 
@@ -98,8 +115,8 @@ public class FindStarbucks implements ScreenState {
 
 	public void mousePressed(PApplet applet) {
 		/**
-		 * Called once after every time a mouse button is pressed.
-		 * Here it is used to determine if Footer Menu Item or not 
+		 * Called once after every time a mouse button is pressed. Here it is
+		 * used to determine if Footer Menu Item or not
 		 * 
 		 */
 
